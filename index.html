@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e7f6e9">
+  <meta name="description" content="루틴에이저와 함께 작은 도전 5개로 나만의 성취를 시작해 보세요.">
+  <title>루틴에이저 | 작은 도전이 만드는 변화</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    /* 메인 캐릭터 이미지 */
+    .hero-image {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 상단 메뉴 -->
+  <header class="site-header">
+    <a href="#home" class="logo">
+      <span class="logo-icon">🌱</span>
+      <span>루틴에이저<small>Routineager</small></span>
+    </a>
+
+    <nav aria-label="주요 메뉴">
+      <a href="#about">서비스 소개</a>
+      <a href="#how">이용 방법</a>
+      <a href="#challenge">챌린지</a>
+      <a href="#reward">배지</a>
+      <a href="#test">ADHD 테스트</a>
+    </nav>
+
+    <a href="#challenge" class="btn btn-primary">
+      지금 시작하기
+    </a>
+  </header>
+
+  <main>
+    <!-- 1. 메인 화면 -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">작은 시작이 만드는 큰 변화</p>
+
+        <h1>
+          작은 도전이<br>
+          더 나은 나를 만드는<br>
+          <strong>루틴에이저</strong>
+        </h1>
+
+        <p class="hero-description">
+          내가 원하는 챌린지를 선택하고<br>
+          5일 안에 5개를 완료하면 리워드를 받아요!<br>
+          꾸준히 이어가면 특별한 배지도 모을 수 있어요.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#challenge" class="btn btn-primary">
+            지금 시작하기 →
+          </a>
+          <a href="#about" class="btn btn-outline">
+            서비스 알아보기
+          </a>
+        </div>
+      </div>
+
+      <!-- 오른쪽 캐릭터 이미지 -->
+      <div class="hero-art">
+        <img
+          src="hero.png"
+          alt="노트북 앞에서 두 팔을 들고 기뻐하는 루틴에이저 캐릭터"
+          class="hero-image"
+        >
+      </div>
+    </section>
+
+    <!-- 2. 공감과 서비스 소개 -->
+    <section id="about" class="section about-section">
+      <div class="section-heading">
+        <p class="eyebrow">WHY ROUTINEAGER?</p>
+        <h2>시작이 어려운 날도 괜찮아!</h2>
+        <p>
+          해야 할 일은 많은데 어디서부터 시작할지 모르겠나요?<br>
+          루틴에이저는 작은 성공부터 시작하도록 도와줘요.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">🌧️</span>
+          <h3>자꾸 미루게 되는 일</h3>
+          <p>막막했던 일도 작게 나누면 시작하기 쉬워져요.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">🌿</span>
+          <h3>내 속도에 맞춘 도전</h3>
+          <p>남과 비교하지 않고 내가 원하는 도전을 선택해요.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">🌟</span>
+          <h3>눈에 보이는 성취감</h3>
+          <p>완료한 도전이 쌓일수록 나의 성장을 확인해요.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 이용 방법 -->
+    <section id="how" class="section how-section">
+      <div class="section-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>루틴에이저, 이렇게 이용해요!</h2>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-icon">📋</span>
+          <span class="step-number">01</span>
+          <h3>챌린지 선택</h3>
+          <p>관심 있는 챌린지 중 마음에 드는 것을 골라요.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-icon">🖐️</span>
+          <span class="step-number">02</span>
+          <h3>5일 안에 5개 완료</h3>
+          <p>원하는 날 자유롭게 5개의 도전을 완료해요.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-icon">🎁</span>
+          <span class="step-number">03</span>
+          <h3>리워드 받기</h3>
+          <p>다섯 손가락을 모두 접으면 보상이 기다려요.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-icon">🏅</span>
+          <span class="step-number">04</span>
+          <h3>계속 도전하기</h3>
+          <p>완료 횟수를 쌓아 특별한 배지를 모아 보세요.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. 챌린지 선택 -->
+    <section id="challenge" class="section challenge-section">
+      <div class="section-heading">
+        <p class="eyebrow">MY CHALLENGE</p>
+        <h2>오늘은 어떤 도전을 해볼까?</h2>
+        <p>
+          거창하지 않아도 괜찮아요.<br>
+          지금 할 수 있는 작은 도전부터 선택해 보세요.
+        </p>
+      </div>
+
+      <div class="challenge-grid" id="challenge-list">
+        <button class="challenge-card" data-challenge="책상 5분 정리하기" aria-pressed="false">
+          <span>🧹</span>
+          <strong>책상 5분 정리하기</strong>
+          <small>생활 습관</small>
+        </button>
+
+        <button class="challenge-card" data-challenge="물 한 잔 마시기" aria-pressed="false">
+          <span>💧</span>
+          <strong>물 한 잔 마시기</strong>
+          <small>건강 습관</small>
+        </button>
+
+        <button class="challenge-card" data-challenge="영어 단어 10개 외우기" aria-pressed="false">
+          <span>📚</span>
+          <strong>영어 단어 10개 외우기</strong>
+          <small>공부 습관</small>
+        </button>
+
+        <button class="challenge-card" data-challenge="가볍게 스트레칭하기" aria-pressed="false">
+          <span>🧘</span>
+          <strong>가볍게 스트레칭하기</strong>
+          <small>건강 습관</small>
+        </button>
+
+        <button class="challenge-card" data-challenge="오늘 할 일 하나 끝내기" aria-pressed="false">
+          <span>✅</span>
+          <strong>오늘 할 일 하나 끝내기</strong>
+          <small>실천 습관</small>
+        </button>
+
+        <button class="challenge-card" data-challenge="감사한 일 한 가지 적기" aria-pressed="false">
+          <span>💚</span>
+          <strong>감사한 일 한 가지 적기</strong>
+          <small>마음 습관</small>
+        </button>
+      </div>
+
+      <p class="challenge-hint">
+        카드를 선택하면 아래의 챌린지 진행 상황에 반영돼요.
+      </p>
+    </section>
+
+    <!-- 5. 다섯 손가락 진행 체험 -->
+    <section id="progress-section" class="section progress-section">
+      <div class="section-heading">
+        <p class="eyebrow">FIVE FINGER CHALLENGE</p>
+        <h2>
+          다섯 손가락이 하나씩 접힐수록<br>
+          성취감이 커져요!
+        </h2>
+      </div>
+
+      <div class="progress-layout">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <h3>나의 챌린지</h3>
+
+            <div class="progress-pill" id="progress">
+              0 / 5 완료
+            </div>
+
+  <div class="finger-display" id="hand">
+  <img
+    src="hand-0.png"
+    alt="손가락 다섯 개가 펴진 손"
+    id="hand-image"
+  >
+</div>
+
+            <p id="progress-message">
+              첫 번째 작은 도전을 시작해 볼까요?
+            </p>
+          </div>
+        </div>
+
+        <div class="progress-details">
+          <h3>내가 완료한 챌린지</h3>
+
+          <ul id="completed-list" aria-live="polite">
+            <li class="empty-message">
+              아직 완료한 챌린지가 없어요.
+            </li>
+          </ul>
+
+          <button id="reset-btn" class="btn btn-outline">
+            체험 다시 시작하기
+          </button>
+
+          <p class="demo-note">
+            이 영역은 랜딩페이지에서 체험하는 데모 기능입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 리워드와 배지 -->
+    <section id="reward" class="section reward-section">
+      <div class="section-heading">
+        <p class="eyebrow">REWARDS & BADGES</p>
+        <h2>
+          작은 성공이 쌓이면<br>
+          특별한 선물이 기다려요!
+        </h2>
+        <p>5개를 완료하고, 다음 도전도 이어가 보세요.</p>
+      </div>
+
+      <div class="reward-highlight">
+        <span class="reward-gift">🎁</span>
+
+        <div>
+          <h3>5개 완료 리워드</h3>
+          <p>다섯 개의 챌린지를 완료하면 기프티콘 보상!</p>
+          <small>
+            현재 페이지는 시연용이며 실제 기프티콘은 지급되지 않습니다.
+          </small>
+        </div>
+      </div>
+
+      <div class="badge-grid">
+        <article class="badge-card">
+          <span>🌱</span>
+          <h3>첫걸음 배지</h3>
+          <p>누적 5개 완료</p>
+        </article>
+
+        <article class="badge-card">
+          <span>⭐</span>
+          <h3>도전자 배지</h3>
+          <p>누적 10개 완료</p>
+        </article>
+
+        <article class="badge-card">
+          <span>👑</span>
+          <h3>꾸준함 배지</h3>
+          <p>누적 30개 완료</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. 오늘 딱 하나 -->
+    <section id="one-thing" class="section one-thing-section">
+      <div class="one-thing-layout">
+        <div>
+          <p class="eyebrow">JUST ONE THING</p>
+          <h2>
+            시작이 막막하다면,<br>
+            오늘 딱 하나만!
+          </h2>
+          <p>
+            큰 목표를 한 번에 끝내지 않아도 괜찮아요.<br>
+            지금 당장 할 수 있는 작은 행동으로 나눠 보세요.
+          </p>
+        </div>
+
+        <div class="one-thing-card">
+          <p class="task-label">오늘의 큰 목표</p>
+          <h3>방 정리하기 🏠</h3>
+          <div class="task-arrow">↓</div>
+          <p class="task-label">오늘 딱 하나</p>
+
+          <div class="tiny-task">
+            ✨ 책상 위 컵 하나 치우기
+          </div>
+
+          <p>작은 시작도 충분히 멋진 도전이에요!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ADHD 테스트 -->
+    <section id="test" class="section test-section">
+      <div class="test-layout">
+        <div class="test-character">
+          <span>🤔</span>
+          <p>
+            집중이 잘 안 되고,<br>
+            자꾸 미루게 된다면?
+          </p>
+        </div>
+
+        <div class="test-content">
+          <p class="eyebrow">KNOW YOURSELF</p>
+          <h2>
+            간단한 ADHD 테스트로<br>
+            나를 조금 더 알아봐요.
+          </h2>
+          <p>
+            나의 집중과 일상 습관을 가볍게 돌아보세요.<br>
+            나에게 맞는 루틴을 찾는 첫걸음이 될 수 있어요.
+          </p>
+
+          <p class="test-notice">
+            이 테스트는 자가 점검을 위한 것으로,
+            ADHD 진단을 대신하지 않습니다.
+          </p>
+
+          <span class="btn btn-outline test-placeholder">
+            ADHD 테스트 준비 중
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. 마지막 시작하기 -->
+    <section id="start" class="final-cta">
+      <div class="final-decoration">🌿 🌱 🌿</div>
+
+      <h2>
+        작은 도전이 쌓이면,<br>
+        더 큰 변화가 시작돼요.
+      </h2>
+
+      <p>지금, 루틴에이저와 함께!</p>
+
+      <a href="#challenge" class="btn btn-primary">
+        지금 시작하기 →
+      </a>
+    </section>
+  </main>
+
+
+<!-- 챌린지 완료 축하 팝업 -->
+<div id="success-modal" class="modal-overlay" hidden>
+  <div class="success-modal">
+    <div class="success-emoji">🎉🎁🎉</div>
+    <h2>5개 챌린지 성공!</h2>
+    <p>
+      작은 도전 5개를 모두 완료했어요.<br>
+      오늘의 성취를 축하해요!
+    </p>
+    <div class="success-badge">
+      🏅 첫 번째 성공 배지 획득!
+    </div>
+    <p class="reward-notice">
+      ※ 현재는 체험용 화면으로,
+      실제 기프티콘은 지급되지 않아요.
+    </p>
+    <button id="close-modal" type="button">
+      정말 잘했어요!
+    </button>
+  </div>
+</div>
+
+
+  <footer class="site-footer">
+    <div class="footer-brand">🌱 루틴에이저</div>
+    <p>작은 도전이 만드는 나만의 성장</p>
+    <p>© 2026 Routineager. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
