@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routineager | 우리는 모두 저마다 빛나는 별입니다</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #050508;
+    }
+
+    .intro {
+      display: block;
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: #050508;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .intro img {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      object-fit: contain;
+    }
+
+    .intro-guide {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      font-size: 13px;
+      white-space: nowrap;
+      font-family: sans-serif;
+    }
+
+    .intro:focus-visible {
+      outline: 3px solid white;
+      outline-offset: -6px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="landing.html"
+     class="intro"
+     aria-label="루틴에이저 랜딩페이지로 이동하기">
+
+    <img
+      src="intro-bg.png"
+      alt="별자리와 은하수 속 Routineager. 우리는 모두 저마다 빛나는 별입니다."
+    >
+
+    <span class="intro-guide">
+      화면을 클릭해 시작하세요 →
+    </span>
+  </a>
+</body>
+</html>
