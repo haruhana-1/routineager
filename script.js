@@ -1,138 +1,113 @@
-
-const challengeCards = document.querySelectorAll(".challenge-card");
-const progress = document.querySelector("#progress");
-const handImage = document.querySelector("#hand-image");
-const progressMessage = document.querySelector("#progress-message");
-const completedList = document.querySelector("#completed-list");
-const resetBtn = document.querySelector("#reset-btn");
-
-const successModal = document.querySelector("#success-modal");
-const closeModalBtn = document.querySelector("#close-modal");
-
-// 브라우저에 저장할 때 사용하는 이름
-const STORAGE_KEY = "routineager-completed";
-
-// 저장된 챌린지 번호 불러오기
+const challengeCards = [...document.querySelectorAll('.challenge-card')];
+const progress = document.querySelector('#progress');
+const progressMessage = document.querySelector('#progress-message');
+const completedList = document.querySelector('#completed-list');
+const resetBtn = document.querySelector('#reset-btn');
+const successModal = document.querySelector('#success-modal');
+const closeModalBtn = document.querySelector('#close-modal');
+const constellation = document.querySelector('#my-constellation');
+const stars = [...document.querySelectorAll('.constellation-stars circle')];
+const links = [...document.querySelectorAll('.constellation-links line')];
+const STORAGE_KEY = 'routineager-completed';
+const MAX_CHALLENGES = 5;
 let completedIds = [];
+let lastFocusedElement = null;
 
 try {
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
   if (Array.isArray(saved)) {
-    completedIds = saved.filter(
-      (id) => Number.isInteger(id) &&
-              id >= 0 &&
-              id < challengeCards.length
-    );
-
-    completedIds = [...new Set(completedIds)].slice(0, 5);
+    completedIds = [...new Set(saved.filter(id =>
+      Number.isInteger(id) && id >= 0 && id < challengeCards.length
+    ))].slice(0, MAX_CHALLENGES);
   }
 } catch (error) {
   completedIds = [];
 }
 
-// 진행 상황 저장
 function saveProgress() {
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(completedIds)
-  );
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(completedIds));
+  } catch (error) {
+    console.warn('진행 상황을 저장할 수 없습니다.', error);
+  }
 }
 
-// 축하 팝업 열기
 function openModal() {
+  lastFocusedElement = document.activeElement;
   successModal.hidden = false;
+  closeModalBtn.focus();
 }
 
-// 축하 팝업 닫기
 function closeModal() {
   successModal.hidden = true;
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus();
+  }
 }
 
-// 화면 전체 갱신
 function render() {
   const count = completedIds.length;
-
   challengeCards.forEach((card, index) => {
-    const isCompleted = completedIds.includes(index);
-
-    card.classList.toggle("completed", isCompleted);
-    card.setAttribute("aria-pressed", String(isCompleted));
+    const done = completedIds.includes(index);
+    card.classList.toggle('completed', done);
+    card.setAttribute('aria-pressed', String(done));
+    card.disabled = !done && count >= MAX_CHALLENGES;
   });
 
-  progress.textContent = `${count} / 5 완료`;
+  progress.textContent = `${count} / ${MAX_CHALLENGES} 완료`;
+  constellation.setAttribute('aria-label', `다섯 개의 도전으로 완성하는 별자리. 현재 완료 ${count}개`);
+  stars.forEach((star, index) => star.classList.toggle('lit', index < count));
+  links.forEach((link, index) => link.classList.toggle('lit', index < count - 1 || count === MAX_CHALLENGES && index === MAX_CHALLENGES - 1));
 
-  handImage.src = `hand-${count}.png`;
-  handImage.alt = `${count}개 완료, 손가락 ${5 - count}개 남음`;
-
-  completedList.innerHTML = "";
-
+  completedList.replaceChildren();
   if (count === 0) {
-    const li = document.createElement("li");
-    li.className = "empty-message";
-    li.textContent = "아직 완료한 챌린지가 없어요.";
-    completedList.appendChild(li);
-
-    progressMessage.textContent =
-      "첫 번째 작은 도전을 시작해 볼까요?";
+    const li = document.createElement('li');
+    li.className = 'empty-message';
+    li.textContent = '아직 완료한 챌린지가 없어요.';
+    completedList.append(li);
+    progressMessage.textContent = '첫 번째 작은 도전을 시작해 볼까요?';
   } else {
-    completedIds.forEach((id) => {
-      const li = document.createElement("li");
+    completedIds.forEach(id => {
+      const li = document.createElement('li');
       li.textContent = challengeCards[id].dataset.challenge;
-      completedList.appendChild(li);
+      completedList.append(li);
     });
-
-    if (count === 5) {
-      progressMessage.textContent =
-        "🎉 다섯 개의 도전을 모두 완료했어요!";
-    } else {
-      progressMessage.textContent =
-        `좋아요! 앞으로 ${5 - count}개만 더 완료하면 돼요.`;
-    }
+    progressMessage.textContent = count === MAX_CHALLENGES
+      ? '✦ 다섯 개의 작은 실천으로 별자리를 완성했어요!'
+      : `별 ${count}개가 빛나고 있어요. ${MAX_CHALLENGES - count}개가 남았어요.`;
   }
 }
 
-// 챌린지 카드 클릭
 challengeCards.forEach((card, index) => {
-  card.addEventListener("click", () => {
+  card.addEventListener('click', () => {
+    const wasComplete = completedIds.length === MAX_CHALLENGES;
     if (completedIds.includes(index)) {
-      return;
+      completedIds = completedIds.filter(id => id !== index);
+    } else if (completedIds.length < MAX_CHALLENGES) {
+      completedIds.push(index);
     }
-
-    if (completedIds.length >= 5) {
-      return;
-    }
-
-    completedIds.push(index);
-
     saveProgress();
     render();
-
-    if (completedIds.length === 5) {
-      openModal();
-    }
+    if (!wasComplete && completedIds.length === MAX_CHALLENGES) openModal();
   });
 });
 
-// 팝업 닫기 버튼
-closeModalBtn.addEventListener("click", closeModal);
-
-// 팝업 바깥쪽 클릭
-successModal.addEventListener("click", (event) => {
-  if (event.target === successModal) {
-    closeModal();
+resetBtn.addEventListener('click', () => {
+  completedIds = [];
+  saveProgress();
+  render();
+  if (!successModal.hidden) closeModal();
+});
+closeModalBtn.addEventListener('click', closeModal);
+successModal.addEventListener('click', event => {
+  if (event.target === successModal) closeModal();
+});
+document.addEventListener('keydown', event => {
+  if (successModal.hidden) return;
+  if (event.key === 'Escape') closeModal();
+  if (event.key === 'Tab') {
+    event.preventDefault();
+    closeModalBtn.focus();
   }
 });
-
-// 초기화 버튼
-resetBtn.addEventListener("click", () => {
-  completedIds = [];
-
-  localStorage.removeItem(STORAGE_KEY);
-
-  render();
-  closeModal();
-});
-
-// 페이지를 열었을 때 저장된 상태 복원
 render();

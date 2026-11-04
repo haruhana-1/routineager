@@ -1,818 +1,146 @@
-
-/* ===== 기본 설정 ===== */
-:root {
-  --green: #146b3b;
-  --green-dark: #104a30;
-  --mint: #e7f6e9;
-  --cream: #fffdf5;
-  --text: #17241e;
-  --muted: #53665b;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: #f3f2ec;
-}
-
-body {
-  width: calc(100% - 48px);
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  color: var(--text);
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  line-height: 1.7;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-section {
-  scroll-margin-top: 90px;
-}
-
-/* ===== 공통 요소 ===== */
-.section {
-  padding: 110px 7%;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 55px;
-}
-
-.section-heading h2 {
-  font-size: clamp(28px, 3.5vw, 43px);
-  line-height: 1.4;
-  margin: 10px 0 20px;
-  letter-spacing: -1.5px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.eyebrow {
-  color: var(--green);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 28px;
-  border-radius: 40px;
-  font-size: 16px;
-  font-weight: 800;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--green);
-  color: white;
-  border: 2px solid var(--green);
-}
-
-.btn-primary:hover {
-  background: var(--green-dark);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: white;
-  color: var(--green-dark);
-  border: 2px solid var(--green);
-}
-
-.btn-outline:hover {
-  background: var(--mint);
-}
-
-/* ===== 상단 메뉴 ===== */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 5%;
-  background: white;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 25px;
-  font-weight: 900;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.logo-icon {
-  font-size: 38px;
-}
-
-.logo small {
-  display: block;
-  font-size: 12px;
-  text-align: center;
-  font-weight: 500;
-}
-
-.site-header nav {
-  display: flex;
-  gap: 25px;
-}
-
-.site-header nav a {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.site-header nav a:hover {
-  color: var(--green);
-}
-
-.site-header .btn {
-  padding: 11px 20px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-/* ===== 메인 히어로 ===== */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 30px;
-  min-height: 650px;
-  padding: 80px 6%;
-  background:
-    radial-gradient(circle at 85% 20%, #d5f0de, transparent 45%),
-    linear-gradient(120deg, #fffef9, #eaf8ed);
-  overflow: hidden;
-}
-
-.hero h1 {
-  font-size: clamp(35px, 4.3vw, 58px);
-  line-height: 1.35;
-  letter-spacing: -2px;
-  margin: 15px 0 28px;
-}
-
-.hero h1 strong {
-  display: inline-block;
-  color: var(--green-dark);
-  font-size: 1.25em;
-  border-bottom: 10px solid #ffe15c;
-  line-height: 1.1;
-}
-
-.hero-description {
-  font-size: 17px;
-  line-height: 1.9;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.hero-art {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 메인 캐릭터 이미지 */
-.hero-image {
-  display: block;
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 24px;
-}
-
-/* ===== 공감과 소개 ===== */
-.about-section {
-  background: #fffdf8;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.feature-card {
-  background: #f1f8ef;
-  border-radius: 35px;
-  padding: 45px 25px;
-  text-align: center;
-}
-
-.feature-icon {
-  display: block;
-  font-size: 65px;
-  margin-bottom: 20px;
-}
-
-.feature-card h3 {
-  font-size: 21px;
-}
-
-.feature-card p {
-  color: var(--muted);
-}
-
-/* ===== 이용 방법 ===== */
-.how-section {
-  background: #f0f9f1;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.step-card {
-  background: white;
-  padding: 35px 20px;
-  border-radius: 35px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(31, 90, 55, 0.05);
-}
-
-.step-icon {
-  display: block;
-  font-size: 65px;
-  margin-bottom: 20px;
-}
-
-.step-number {
-  display: inline-block;
-  background: var(--green);
-  color: white;
-  border-radius: 30px;
-  padding: 2px 12px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.step-card h3 {
-  font-size: 19px;
-}
-
-.step-card p {
-  color: var(--muted);
-  font-size: 15px;
-}
-
-/* ===== 챌린지 선택 ===== */
-.challenge-section {
-  background: #fffdf5;
-}
-
-.challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.challenge-card {
-  border: 2px solid #e3eee3;
-  border-radius: 28px;
-  background: white;
-  padding: 35px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.2s;
-  color: var(--text);
-}
-
-.challenge-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--green);
-  box-shadow: 0 10px 25px rgba(20, 107, 59, 0.08);
-}
-
-.challenge-card span {
-  display: block;
-  font-size: 55px;
-  margin-bottom: 12px;
-}
-
-.challenge-card strong {
-  display: block;
-  font-size: 17px;
-}
-
-.challenge-card small {
-  color: var(--muted);
-}
-
-.challenge-card.completed {
-  background: #d9f4df;
-  border-color: var(--green);
-}
-
-.challenge-card.completed::after {
-  content: "✓ 완료";
-  display: block;
-  margin-top: 10px;
-  color: var(--green);
-  font-weight: bold;
-}
-
-.challenge-hint {
-  text-align: center;
-  color: var(--muted);
-  margin-top: 25px;
-}
-
-/* ===== 손가락 진행 체험 ===== */
-.progress-section {
-  background: #edf7f0;
-}
-
-.progress-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.phone-mockup {
-  width: 290px;
-  max-width: 100%;
-  min-height: 500px;
-  margin: 0 auto;
-  border: 9px solid #26332b;
-  border-radius: 45px;
-  background: white;
-  padding: 18px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-.phone-screen {
-  text-align: center;
-}
-
-.phone-screen h3 {
-  font-size: 23px;
-}
-
-.progress-pill {
-  background: #d7f3c5;
-  color: var(--green-dark);
-  border-radius: 25px;
-  font-size: 21px;
-  font-weight: 800;
-}
-
-/* 손 이미지 표시 */
-.finger-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  margin: 20px auto;
-}
-
-#hand-image {
-  display: block;
-  width: 100%;
-  max-width: 210px;
-  height: auto;
-  border-radius: 20px;
-  transition: opacity 0.2s ease;
-}
-
-#progress-message {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.progress-details h3 {
-  font-size: 26px;
-}
-
-#completed-list {
-  list-style: none;
-  padding: 0;
-}
-
-#completed-list li {
-  background: white;
-  border-radius: 15px;
-  padding: 13px 18px;
-  margin-bottom: 10px;
-}
-
-#completed-list li:not(.empty-message)::before {
-  content: "✅ ";
-}
-
-.demo-note {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 15px;
-}
-
-/* ===== 리워드 ===== */
-.reward-section {
-  background: #fff9e9;
-}
-
-.reward-highlight {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  max-width: 750px;
-  margin: 0 auto 55px;
-  padding: 35px;
-  background: white;
-  border-radius: 30px;
-}
-
-.reward-gift {
-  font-size: 85px;
-}
-
-.reward-highlight h3 {
-  font-size: 24px;
-}
-
-.reward-highlight small {
-  color: var(--muted);
-}
-
-.badge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.badge-card {
-  text-align: center;
-  background: white;
-  padding: 40px 20px;
-  border-radius: 30px;
-}
-
-.badge-card span {
-  display: block;
-  font-size: 85px;
-}
-
-.badge-card h3 {
-  font-size: 21px;
-}
-
-/* ===== 오늘 딱 하나 ===== */
-.one-thing-section {
-  background: #e9f7ef;
-}
-
-.one-thing-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.one-thing-layout h2 {
-  font-size: clamp(30px, 3.5vw, 43px);
-  line-height: 1.4;
-}
-
-.one-thing-card {
-  background: white;
-  padding: 40px;
-  border-radius: 35px;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-}
-
-.task-label {
-  color: var(--green);
-  font-weight: bold;
-}
-
-.task-arrow {
-  font-size: 40px;
-  color: var(--green);
-}
-
-.tiny-task {
-  background: #e0f5e4;
-  padding: 20px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-/* ===== ADHD 테스트 ===== */
-.test-section {
-  background: #fffdf5;
-}
-
-.test-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 50px;
-  align-items: center;
-  background: #eff8ed;
-  padding: 55px;
-  border-radius: 50px;
-}
-
-.test-character {
-  text-align: center;
-}
-
-.test-character span {
-  font-size: 120px;
-}
-
-.test-character p {
-  background: white;
-  border-radius: 35px;
-  padding: 20px;
-  font-weight: bold;
-}
-
-.test-content h2 {
-  font-size: clamp(27px, 3vw, 37px);
-  line-height: 1.4;
-}
-
-.test-notice {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.test-placeholder {
-  margin-top: 15px;
-  cursor: default;
-}
-
-/* ===== 마지막 시작하기 ===== */
-.final-cta {
-  text-align: center;
-  padding: 100px 20px 120px;
-  background:
-    radial-gradient(ellipse at bottom left, #b7e3a7, transparent 35%),
-    radial-gradient(ellipse at bottom right, #b7e3a7, transparent 35%),
-    #f5faef;
-}
-
-.final-cta h2 {
-  font-size: clamp(30px, 4vw, 45px);
-  line-height: 1.4;
-}
-
-.final-cta p {
-  font-size: 21px;
-  font-weight: bold;
-}
-
-.final-decoration {
-  font-size: 50px;
-  margin-bottom: 25px;
-}
-
-.final-cta .btn {
-  margin-top: 20px;
-}
-
-/* ===== 푸터 ===== */
-.site-footer {
-  background: #174b32;
-  color: white;
-  text-align: center;
-  padding: 45px 20px;
-}
-
-.footer-brand {
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.site-footer p {
-  font-size: 13px;
-  opacity: 0.85;
-}
-
-/* ===== 태블릿 ===== */
-@media (max-width: 950px) {
-  .site-header {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .site-header nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
+:root{--night:#101014;--night2:#19191e;--ivory:#f6f1e9;--paper:#fffdf9;--ink:#202024;--muted:#716c69;--line:#ded8cf;--silver:#d5d0d0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.75;background:var(--night);color:var(--ink);overflow-wrap:break-word}a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid #b6a68d;outline-offset:4px}section{scroll-margin-top:90px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:100px;font-size:15px;font-weight:700;cursor:pointer;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn-light{background:var(--ivory);color:#18181a;border:1px solid var(--ivory)}.btn-light:hover{background:#e6ddd0}.btn-outline-light{background:transparent;color:var(--ivory);border:1px solid #99949a}.btn-outline-light:hover{background:#333238}.btn-outline-dark{border:1px solid #8f8983;background:transparent;color:var(--ink)}.btn-dark{background:var(--night);color:var(--ivory);border:1px solid var(--night)}
+.site-header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 6%;background:var(--night);color:var(--ivory);border-bottom:1px solid #ffffff14}.logo,.footer-brand{font-family:Georgia,"Times New Roman",serif;font-size:26px;letter-spacing:-.6px;white-space:nowrap}.logo span{font-family:serif;margin-right:6px;font-size:24px}.site-header nav{display:flex;gap:30px;align-items:center}.site-header nav a{font-size:14px;font-weight:600;white-space:nowrap}.site-header nav a:hover{color:#d0c2b0}.header-btn{min-height:44px;white-space:nowrap}
+.hero{position:relative;isolation:isolate;min-height:580px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 52% 60%,#222129 0%,#141419 42%,#0d0d10 88%);color:var(--ivory);text-align:center}.night-sky{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(1px 1px at 12% 14%,#fff 95%,transparent),radial-gradient(1px 1px at 68% 24%,#fff 95%,transparent),radial-gradient(2px 2px at 31% 55%,#fff 95%,transparent),radial-gradient(1px 1px at 81% 65%,#fff 95%,transparent),radial-gradient(1px 1px at 52% 82%,#fff 95%,transparent),radial-gradient(1px 1px at 91% 19%,#fff 95%,transparent);background-size:127px 113px,173px 149px,211px 191px,239px 181px,293px 233px,347px 281px}.galaxy{position:absolute;width:110%;height:180px;left:10%;top:38%;transform:rotate(-27deg);opacity:.72;filter:blur(9px);background:radial-gradient(ellipse at 50% 50%,#ffffff45 0%,#aaa8c044 9%,#ffffff12 22%,transparent 62%);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}.galaxy:after{content:"";position:absolute;inset:-50px;background-image:radial-gradient(1px 1px at 15% 40%,white 95%,transparent),radial-gradient(1px 1px at 30% 70%,white 95%,transparent),radial-gradient(1px 1px at 45% 30%,white 95%,transparent),radial-gradient(1px 1px at 65% 60%,white 95%,transparent),radial-gradient(1px 1px at 82% 35%,white 95%,transparent);background-size:19px 23px,29px 31px,37px 43px,47px 41px,61px 53px}.sky-constellations{position:absolute;width:100%;height:100%;inset:0}.sky-lines{fill:none;stroke:#e9e8ed;stroke-width:1;stroke-opacity:.66}.sky-nodes{fill:#fff;filter:drop-shadow(0 0 6px #fff)}.sky-sparkles{fill:none;stroke:#fff;stroke-width:1.2;filter:drop-shadow(0 0 7px #fff)}.hero-content{position:relative;z-index:1;padding:95px 20px 140px;text-shadow:0 2px 25px #000}.hero-ornament{font-size:38px;color:#fff;display:block;margin-bottom:8px}.hero h1{margin:0;font:400 clamp(54px,8.5vw,112px)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em}.title-star{font-size:32px;margin:12px 0 3px}.hero-content p{margin:10px 0 25px;font-size:clamp(15px,1.8vw,20px);letter-spacing:.04em}.hero-btn{min-width:205px;text-shadow:none}
+.intro-band{position:relative;z-index:1;margin-top:-55px;padding:85px 7% 90px;display:grid;grid-template-columns:1.3fr 2fr;align-items:center;gap:55px;background:var(--ivory);border-radius:50% 50% 0 0 / 60px 60px 0 0}.intro-copy{max-width:420px}.intro-symbol{font-size:35px}.intro-copy h2{font-size:clamp(28px,3.1vw,43px);line-height:1.35;letter-spacing:-1px;margin:12px 0 16px}.intro-copy p{color:#625e5b;font-size:15px}.intro-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}.intro-features>div{padding:12px 18px}.intro-features>div+div{border-left:1px solid #cfc7be}.intro-features span{display:block;font:44px Georgia,serif;margin-bottom:20px}.intro-features h3{font-size:18px;margin:0 0 5px}.intro-features p{margin:0;color:#625e5b;font-size:14px}.brand-statement{padding:65px 20px;background:var(--night);color:var(--ivory);text-align:center;background-image:radial-gradient(1px 1px at 12% 35%,#fff 90%,transparent),radial-gradient(1px 1px at 83% 60%,#fff 90%,transparent)}.brand-statement p{margin:0;font-size:clamp(16px,2vw,21px);line-height:1.9}
+.section{padding:100px 7%}.section-ivory{background:var(--ivory);color:var(--ink)}.section-dark{background:var(--night);color:var(--ivory)}.section-heading{max-width:760px;margin:0 auto 45px;text-align:center}.eyebrow{margin:0 0 12px;font-size:12px;letter-spacing:2.6px;font-weight:800;color:#8a7d6d}.section-dark .eyebrow,.final-cta .eyebrow{color:#c6b9a9}.section-heading h2,.split-layout h2,.final-cta h2{font-size:clamp(28px,3.4vw,44px);line-height:1.35;letter-spacing:-1.3px;margin:0 0 16px}.section-heading>p:last-child,.split-layout>div>p:not(.eyebrow){font-size:15px;opacity:.77}.grid{display:grid;gap:18px;max-width:1140px;margin:0 auto}.grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-four{grid-template-columns:repeat(4,minmax(0,1fr))}.info-card{padding:34px 24px;border:1px solid #d9d1c7;background:var(--paper);border-radius:4px;text-align:center}.section-dark .info-card{background:#1d1d23;border-color:#3d3b43}.card-number{display:block;font:30px Georgia,serif;color:#8a7d6d;margin-bottom:15px}.section-dark .card-number{color:#d5c5ae}.info-card h3{font-size:18px;margin:0 0 10px}.info-card p{font-size:14px;opacity:.73;margin:0}.challenge-card{min-height:185px;padding:30px 18px;border:1px solid #d6cec3;border-radius:4px;background:var(--paper);color:var(--ink);text-align:center;cursor:pointer;transition:transform .2s,border .2s,background .2s}.challenge-card:hover{transform:translateY(-3px);border-color:#93816c}.challenge-icon{display:block;font-size:36px;margin-bottom:10px}.challenge-card strong{display:block;font-size:17px}.challenge-card small{display:block;font-size:13px;color:#77716c;margin-top:6px}.challenge-card.completed{background:#e8e0d3;border-color:#8b7760}.challenge-card.completed:after{content:"✦ 완료";display:block;color:#5d4b39;font-weight:700;margin-top:8px}.challenge-hint{text-align:center;color:#716b66;font-size:13px;margin:28px auto 0;max-width:650px}
+.constellation-section{background:radial-gradient(ellipse at 25% 55%,#282632,#111115 60%)}.progress-layout{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:70px;max-width:1050px;margin:auto}.constellation-panel{border:1px solid #5a5662;background:radial-gradient(ellipse at center,#292632,#141419 75%);padding:24px 25px 12px;text-align:center;border-radius:8px;box-shadow:0 25px 60px #0004}.progress-count{display:inline-block;padding:7px 22px;border:1px solid #77717b;border-radius:30px;color:var(--ivory);font-size:15px}#my-constellation{width:100%;height:auto;max-height:340px}.constellation-links line{stroke:#f8f1e4;stroke-width:1.7;opacity:0;transition:opacity .6s}.constellation-links line.lit{opacity:.7}.constellation-stars circle{fill:#6b6775;stroke:#a19aa7;stroke-width:1.5;transition:fill .3s,filter .3s}.constellation-stars circle.lit{fill:#fff;stroke:#fff;filter:drop-shadow(0 0 8px #fff)}#progress-message{min-height:45px;color:#e1d8d0;font-size:14px}.progress-details h3{font-size:27px;margin:10px 0 20px}.mini-star{font-size:40px}.progress-details ul{list-style:none;margin:0 0 25px;padding:0}.progress-details li{padding:11px 0;border-bottom:1px solid #ffffff2e;color:#e9e2da}.progress-details li:not(.empty-message):before{content:"✦ ";color:#e3d0af}.demo-note{font-size:12px;color:#aaa3a3;max-width:330px}.reward-highlight{display:flex;align-items:center;gap:30px;max-width:780px;margin:0 auto 38px;padding:28px 38px;border:1px solid #cfc6b9;background:#e9e0d3}.reward-highlight>span{font:70px Georgia,serif}.reward-highlight h3{margin:0 0 8px}.reward-highlight p{margin:0}.reward-highlight small{display:block;margin-top:6px;color:#68615c}.badge-icon{display:block;font:50px Georgia,serif;margin-bottom:12px}.split-layout{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center;max-width:1100px;margin:auto}.one-thing-card{padding:40px;border:1px solid #58545d;text-align:center;background:#1d1d23}.one-thing-card h3{font-size:24px}.task-label{color:#d2c3b0!important;font-weight:700;font-size:13px}.task-arrow{font-size:34px;color:#c7b6a0}.tiny-task{padding:18px;border:1px solid #6e6260;background:#302d30;font-weight:700}.one-thing-card>p:last-child{color:#d2cbc5}.test-visual{text-align:center;padding:30px}.test-visual span{font:130px Georgia,serif}.test-visual p{font-weight:700;font-size:19px}.test-notice{font-size:12px!important;margin-top:20px}.test-placeholder{opacity:.7;cursor:default;margin-top:10px}.final-cta{text-align:center;padding:100px 20px;background:radial-gradient(ellipse at center,#282530,#111115 70%);color:var(--ivory)}.final-cta>p:not(.eyebrow){font-size:18px}.final-cta .btn{margin-top:18px}.site-footer{text-align:center;padding:48px 20px;background:#0b0b0e;color:var(--ivory);border-top:1px solid #ffffff24}.site-footer p{color:#bbb4ae;font-size:12px;margin:7px 0}.footer-brand{font-size:26px}
+.modal-overlay{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:20px;background:#09090cda}.modal-overlay[hidden]{display:none}.success-modal{max-width:440px;width:100%;max-height:90vh;overflow-y:auto;padding:38px 28px;background:var(--ivory);color:var(--ink);text-align:center;border:1px solid #b4a28b;box-shadow:0 30px 90px #0009}.success-emoji{font:70px Georgia,serif}.success-modal h2{font-size:29px;margin:6px 0 15px}.success-modal p{font-size:15px}.success-badge{padding:15px;background:#e6dccd;margin:22px 0;font-weight:700}.reward-notice{font-size:12px!important;color:#6b6661}
+@media(max-width:1050px){.site-header{flex-wrap:wrap;justify-content:center}.site-header nav{order:3;flex-basis:100%;justify-content:center}.intro-band{grid-template-columns:1fr;gap:30px}.intro-copy{text-align:center;max-width:none}.grid-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.site-header{gap:10px;padding:15px 4%}.logo{font-size:22px}.site-header nav{gap:12px;flex-wrap:wrap}.site-header nav a{font-size:12px}.header-btn{font-size:12px;padding:8px 14px;min-height:38px}.hero{min-height:490px}.hero-content{padding:80px 15px 115px}.hero h1{font-size:clamp(44px,11vw,70px)}.hero-ornament{font-size:27px}.hero-content p{font-size:14px}.sky-constellations{width:145%;left:-22.5%;opacity:.65}.intro-band{margin-top:-35px;padding:70px 6% 55px;border-radius:50% 50% 0 0 / 36px 36px 0 0}.intro-features{grid-template-columns:1fr}.intro-features>div{padding:20px 10px}.intro-features>div+div{border-left:0;border-top:1px solid #d0c8be}.intro-features span{margin-bottom:8px}.brand-statement{padding:50px 18px}.section{padding:75px 6%}.grid-three,.grid-four,.progress-layout,.split-layout{grid-template-columns:1fr}.progress-layout,.split-layout{gap:30px}.info-card{padding:28px 20px}.progress-details{text-align:center}.progress-details ul{text-align:left}.demo-note{margin-left:auto;margin-right:auto}.reward-highlight{flex-direction:column;gap:5px;text-align:center;padding:25px}.one-thing-card{padding:30px 20px}.test-visual span{font-size:85px}.final-cta{padding:80px 6%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* 2026-11-03: 시안 비율에 맞춘 전체 화면 별자리 히어로 */
+@media (min-width: 701px) {
   .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
+    min-height: max(720px, calc(100svh - 82px));
   }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-art {
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ===== 스마트폰 ===== */
-@media (max-width: 600px) {
-  body {
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .section {
-    padding: 75px 6%;
-  }
-
-  .site-header {
-    padding: 18px 5%;
-  }
-
-  .site-header nav {
-    gap: 12px;
-  }
-
-  .site-header nav a {
-    font-size: 12px;
-  }
-
-  .hero {
-    padding: 70px 6%;
-    min-height: auto;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero-description {
-    font-size: 15px;
-  }
-
-  .feature-grid,
-  .steps-grid,
-  .challenge-grid,
-  .badge-grid,
-  .progress-layout,
-  .one-thing-layout,
-  .test-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .progress-layout {
-    gap: 35px;
-  }
-
-  .reward-highlight {
+  .hero-content {
+    min-height: max(720px, calc(100svh - 82px));
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 20px 125px;
   }
+  .night-sky .galaxy { top: 48%; height: 220px; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: max(600px, calc(100svh - 132px)); }
+  .hero-content {
+    min-height: max(600px, calc(100svh - 132px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 15px 110px;
+  }
+  .night-sky .galaxy { top: 48%; }
+}
+/* 리워드가 다른 섹션과 구분되어 확실하게 보이도록 */
+#reward { padding-top: 110px; padding-bottom: 115px; }
+#reward .reward-highlight { border-radius: 8px; box-shadow: 0 12px 30px #16131a12; }
+#reward .badge-grid .info-card { border-radius: 8px; }
 
-  .test-layout {
-    padding: 30px 20px;
-    gap: 20px;
-  }
 
-  .one-thing-card {
-    padding: 30px 20px;
-  }
-
-  .final-cta {
-    padding: 80px 6%;
-  }
+/* 밝은 영역을 화이트로 통일 */
+:root {
+  --cream: #ffffff;
+  --ivory: #ffffff;
+  --paper: #ffffff;
 }
 
-
-/* ===== 챌린지 성공 축하 팝업 ===== */
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(20, 40, 30, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: 1000;
+body,
+.hero-feature-band,
+.about-section,
+.how-section,
+.challenge-section,
+.one-thing-section,
+.test-section {
+  background-color: #ffffff;
 }
 
-/* 숨겨진 상태에서는 표시하지 않기 */
-.modal-overlay[hidden] {
+.feature-card,
+.step-card,
+.challenge-card,
+.badge-card,
+.one-thing-card {
+  background-color: #ffffff;
+  border-color: #e8e8e8;
+}
+/* 오늘 딱 하나 영역 글자 색상 수정 */
+.one-thing-card {
+  background: #ffffff;
+  color: #222222;
+}
+
+.one-thing-card h3 {
+  color: #222222;
+}
+
+.one-thing-card .task-label {
+  color: #777777 !important;
+}
+
+.one-thing-card > p:last-child {
+  color: #777777;
+}
+/* 오늘 딱 하나 - 작은 목표 글씨 수정 */
+.one-thing-card .tiny-task {
+  background: #302d30;
+  color: #ffffff;
+}
+
+/* 랜딩페이지 메인 배경을 인트로 이미지로 변경 */
+.hero {
+  background-color: #050508;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.08)
+    ),
+    url("intro-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 기존 별자리 그림이 겹치지 않도록 숨기기 */
+.hero-stars,
+.hero-orbit,
+.hero .constellation,
+.hero .galaxy {
+  display: none;
+}
+/* 랜딩페이지 별자리 배경 전용 이미지 */
+.hero {
+  background-image: url("hero-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #050508;
+}
+
+/* 기존 별자리 장식 숨기기 */
+.hero-stars,
+.hero-orbit,
+.hero .constellation,
+.hero .galaxy {
   display: none;
 }
 
-.success-modal {
-  width: 100%;
-  max-width: 420px;
-  padding: 45px 30px;
-  background: #ffffff;
-  border-radius: 35px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  animation: modalAppear 0.4s ease;
+/* 배경 이미지 위에 겹치는 기존 별자리 장식 제거 */
+.hero .hero-stars,
+.hero .hero-orbit,
+.hero .constellation,
+.hero .galaxy,
+.hero .star,
+.hero .sparkle,
+.hero svg {
+  display: none !important;
 }
 
-.success-emoji {
-  font-size: 55px;
-  margin-bottom: 15px;
-}
-
-.success-modal h2 {
-  color: #146b3b;
-  font-size: 29px;
-  margin-bottom: 15px;
-}
-
-.success-modal p {
-  color: #53665b;
-  line-height: 1.8;
-}
-
-.success-badge {
-  background: #e4f6e7;
-  color: #146b3b;
-  padding: 18px;
-  border-radius: 18px;
-  font-weight: bold;
-  margin: 25px 0;
-}
-
-.success-modal .reward-notice {
-  font-size: 12px;
-  color: #888888;
-}
-
-#close-modal {
-  background: #146b3b;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 15px 30px;
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#close-modal:hover {
-  background: #104a30;
-}
-
-@keyframes modalAppear {
-  from {
-    opacity: 0;
-    transform: translateY(25px) scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+/* 새로운 별자리 배경만 표시 */
+.hero {
+  background: #050508 url("hero-bg.png") center center / cover no-repeat;
 }
